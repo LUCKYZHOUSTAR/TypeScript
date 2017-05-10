@@ -33,4 +33,42 @@ namespace grammer{
 
     let a=Direction.Down;
 
+    
+    interface LabelLedValue{
+        label:string;
+    }
+
+    /**可选属性接口里的属性不全都是必需的。 有些是只在某些条件下存在，或者根本不存在。 可选属性在应用“option bags”模式时很常用，即给函数传入的参数对象中只有部分属性赋值了。*/
+    interface SquareConfig{
+        color?:string;
+        width?:number;
+    }
+
+    class Greeter{
+        greeting:string;
+        constructor(message:string){
+            this.greeting=message;
+        }
+
+        greet(){
+            return "hello";
+        }
+    }
+
+
+    class Animal extends Greeter{
+        greet(){
+            return "hi";
+        }
+    }
+
+    class Chicken {
+        public name: string;
+        public constructor(theName: string) { this.name = theName; }
+        move(distanceInMeters: number) {
+            console.log(`${this.name} moved ${distanceInMeters}m.`);
+        }
+    }
+
+    $(()=>new Greeter("hello"));
 }
